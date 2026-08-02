@@ -190,13 +190,8 @@ async function streamHandler({ type, id }) {
   return { streams };
 }
 
-// ---------- Create and start the addon ----------
+// --------- Create and start the addon ---------
 const builder = new addonBuilder(manifest);
 builder.defineStreamHandler(streamHandler);
 
-serveHTTP(builder.getInterface(), { port: ADDON_PORT });
-console.log(`Addon running on port ${ADDON_PORT}`);
-
-  console.log(`LimeTorrents addon running on http://127.0.0.1:${ADDON_PORT}`);
-  console.log(`Manifest: http://127.0.0.1:${ADDON_PORT}/manifest.json`);
-});
+serveHTTP(builder.getInterface(), { port: process.env.PORT || 7000 });
