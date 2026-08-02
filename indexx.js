@@ -1,7 +1,8 @@
 // indexx.js – Stremio Addon for Watchnest
-const { addonBuilder, serveHTTP, publishToCentral } = require('stremio-addon-sdk');
-const axios = require('axios');
-const cheerio = require('cheerio');
+const { addonBuilder, serveHTTP } = require("stremio-addon-sdk");
+const axios = require("axios");
+const cheerio = require("cheerio");
+
 
 // ========== MANIFEST ==========
 const manifest = {
